@@ -1,7 +1,7 @@
 import MyMessage from './MyMessage';
 import TheirMessage from './TheirMessage';
 import MessageForm from './MessageForm';
-
+import Click from '../click';
 const ChatFeed = (props) => {
   const { chats, activeChat, userName, messages } = props;
 
@@ -28,6 +28,8 @@ const ChatFeed = (props) => {
 
       return (
         <div key={`msg_${index}`} style={{ width: '100%' }}>
+             
+
           <div className="message-block">
             {isMyMessage
               ? <MyMessage message={message} />
@@ -44,7 +46,9 @@ const ChatFeed = (props) => {
   if (!chat) return <div />;
 
   return (
+    
     <div className="chat-feed">
+         <Click/>
       <div className="chat-title-container">
         <div className="chat-title">{chat?.title}</div>
         <div className="chat-subtitle">
