@@ -1,8 +1,18 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;600&family=Share+Tech+Mono&display=swap);
+
+
+:root{
+  --main: #121212;
+  --sec: rgb(29, 29, 29);
+--green: #a7d8a9;
+}
+
 /* CHAT STYLES */
 * {
-  font-family: Avenir, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  font-family: 'Roboto Mono', monospace, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
-    Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji !important;
   letter-spacing: 0.5px;
 
   font-style: italic;
@@ -15,7 +25,7 @@
 }
 
 .ce-chats-container {
-  background-color: #000000 !important;
+  background-color: var(--main) !important;
 }
 
 .ce-chat-form-container {
@@ -38,7 +48,9 @@
 
 .ce-primary-button {
   border-radius: 6px !important;
-  background-color: rgb(153, 153, 153) !important;
+  border: 0 !important;
+  color: var(--green) !important;
+  background-color: var(--sec) !important;
   position: relative;
   bottom: 1px;
 }
@@ -58,10 +70,11 @@
   border: 1px solid #000000 !important;
 }
 
-.ce-autocomplete-options {
+.ce-autocomplete-options,.ce-autocomplete-option {
   border-radius: 6px !important;
   border: 1px solid #3b2a50 !important;
   background-color: black !important;
+  color: black !important;
 }
 
 .ce-chat-settings-container {
@@ -78,21 +91,29 @@
   height: 100%;
   width: 100%;
   overflow: scroll;
-  background-color: black;
+  background-color: var(--main) !important;
 }
 
 .ce-chat-card, .ce-active-chat-card{
-  background-color: rgb(46, 44, 44) !important;
+  background-color: var(--sec) !important;
   border: 1px solid white !important;
+}
+
+.ce-active-chat-card{
+  border: 3px solid var(--green) !important;
+  border-radius: 0 !important;
+
+
 }
  
 
 
 .chat-title-container {
+  
   width: calc(100% - 36px);
   padding: 18px;
   text-align: center;
-background-color: #000000 !important;
+background-color: var(--main) !important;
 }
 
 .chat-title {
@@ -177,7 +198,7 @@ background-color: #000000 !important;
 .message-form {
   overflow: hidden;
   border-radius: 6px;
-  border: 5px solid rgb(127, 127, 127);
+  border: 0px solid rgb(127, 127, 127);
   background-color: black;
 }
 
@@ -185,10 +206,14 @@ background-color: #000000 !important;
   height: 40px;
   width: calc(100% - 132px);
   background-color: black;
-  border: 1px solid black;
+  border: 2px solid white !important;
   padding: 0px 18px;
   outline: none;
   font-size: 15px;
+}
+.message-input:hover{
+  border: 2px solid var(--green) !important;
+
 }
 
 .image-button {
@@ -207,7 +232,7 @@ background-color: #000000 !important;
 .send-button-click {
   position: absolute;
   height: 42px;
-  background-color: black;
+  background-color: black !important;
   border: 1px solid red !important;
   color: red !important;
   padding: 0px 18px;
@@ -237,22 +262,23 @@ background-color: #000000 !important;
   font-size: 62,5%;
 }
 .form{
-  background: rgb(46, 45, 45) !important;
+  background: var(--sec) !important;
   border: 3px white solid !important;
   padding-bottom: 10px;
 }
 .wrapper {
   height: 100vh;
 	width: 100%;
-  background-color: #000000 !important;  
+  background-color: var(--main) !important;  
   display: flex;
   justify-content: center;
   align-items: center;
 }
-input, button {
+input {
   background-color: #000000 !important;
   border: 1px solid white !important;
 }
+
 .title{
   color: rgb(20, 172, 20) !important;
 }
@@ -280,7 +306,9 @@ input, button {
 .title {
   text-align: center;
   color: white;
-  margin-bottom: 30px;
+  margin-bottom: 3px;
+  margin-top: 3px;
+
   width: 100%;
   font-size: 2.3em;;
 }
@@ -326,8 +354,11 @@ input, button {
 }
 .ce-chat-subtitle-text, .ce-chat-subtitle-message{
   color: white !important;
+  
 }
-
+.ce-chat-card{
+  background-color: var(--sec);
+}
 *{color: white !important;
 }
 
@@ -352,3 +383,17 @@ input, button {
   
 }
 
+.button, button{
+  background-color: var(--green) !important;
+  color: var(--main) !important;
+}
+.input:hover,input:hover,#ce-add-username-input:hover{
+  border: 2px solid var(--green) !important;
+
+}
+.ce-autocomplete-options,#ce-autocomplete-option {
+  border-radius: 6px !important;
+  border: 1px solid #3b2a50 !important;
+  
+  color: black   !important;
+}

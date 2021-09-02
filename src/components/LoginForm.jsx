@@ -22,20 +22,20 @@ const Modal = () => {
       window.location.reload();
       setError('');
     } catch (err) {
-      setError('Oops, incorrect credentials.');
+      setError('Nice try, fool ;)');
     }
   };
 
   return (
     <div className="wrapper">
       <div className="form">
-        <h1 className="title">PolChat</h1>
+        <h1 className="title" style={{width: ""}}><img alt="" className="title" style={{width: "200px"}} src="/images/polstrat-white.png"></img></h1>
         <form onSubmit={handleSubmit}>
           <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} className="input" placeholder="Username" required />
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="input" placeholder="Password" required />
           <div align="center">
             <button type="submit" className="button">
-              <span>Start chatting</span>
+              <span><strong>Log in</strong></span>
             </button>
 
             
