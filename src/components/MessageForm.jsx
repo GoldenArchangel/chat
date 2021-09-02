@@ -33,7 +33,8 @@ const MessageForm = (props) => {
   return (
    
    <form className="message-form" onSubmit={handleSubmit}>
-           
+                        <isTyping/>
+
       <input
         className="message-input"
         placeholder="Send a message..."

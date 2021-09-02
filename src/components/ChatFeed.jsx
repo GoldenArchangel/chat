@@ -1,7 +1,12 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 import MyMessage from './MyMessage';
 import TheirMessage from './TheirMessage';
 import MessageForm from './MessageForm';
 import Click from '../click';
+import { IsTyping } from 'react-chat-engine';
+import { ConnectionBar } from 'react-chat-engine';
+
+
 const ChatFeed = (props) => {
   const { chats, activeChat, userName, messages } = props;
 
@@ -9,6 +14,7 @@ const ChatFeed = (props) => {
 
   const renderReadReceipts = (message, isMyMessage) => chat.people.map((person, index) => person.last_read === message.id && (
     <div
+    
       key={`read_${index}`}
       className="read-receipt"
       style={{
@@ -25,10 +31,11 @@ const ChatFeed = (props) => {
       const message = messages[key];
       const lastMessageKey = index === 0 ? null : keys[index - 1];
       const isMyMessage = userName === message.sender.username;
+      
 
       return (
         <div key={`msg_${index}`} style={{ width: '100%' }}>
-             
+      
 
           <div className="message-block">
             {isMyMessage
@@ -48,16 +55,21 @@ const ChatFeed = (props) => {
   return (
     
     <div className="chat-feed">
-         <Click/>
+            
+
       <div className="chat-title-container">
-        <div className="chat-title">{chat?.title}</div>
-        <div className="chat-subtitle">
-          {chat.people.map((person) => ` ${person.person.username}`)}
-        </div>
+
+        <div className="chat-title">{chat?.title}             <Click/>
+</div>
+       
+
+
       </div>
       {renderMessages()}
       <div style={{ height: '100px' }} />
       <div className="message-form-container">
+      <ConnectionBar />
+      <IsTyping/>
         <MessageForm {...props} chatId={activeChat} />
       </div>
     </div>
