@@ -7,6 +7,8 @@ import { IsTyping } from 'react-chat-engine';
 import { ConnectionBar } from 'react-chat-engine';
 
 
+
+
 const ChatFeed = (props) => {
   const { chats, activeChat, userName, messages } = props;
 

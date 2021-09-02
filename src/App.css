@@ -5,6 +5,26 @@
   background: transparent; /* Optional: just make scrollbar invisible */
 }
 
+img{
+  cursor: pointer;
+}
+
+img:active{
+  color: #424242; 
+position: absolute !important;
+top: 40%;
+left: 40% !important;
+-webkit-transition: all .3s ease-in;
+-moz-transition: all .3s ease-in;
+-ms-transition: all .3s ease-in;
+-o-transition: all .3s ease-in;
+transition: all .3s ease-in;
+opacity: 1;
+transform: scale(4);
+-ms-transform: scale(4); /* IE 9 */
+-webkit-transform: scale(4); /* Safari and Chrome */
+}
+
 :root{
   --main: #121212;
   --sec: rgb(29, 29, 29);
