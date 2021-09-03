@@ -4,6 +4,7 @@ import { sendMessage, isTyping } from 'react-chat-engine';
 
 
 
+
 const MessageForm = (props) => {
   const [value, setValue] = useState('');
   const { chatId, creds } = props;
@@ -30,10 +31,31 @@ const MessageForm = (props) => {
     sendMessage(creds, chatId, { files: event.target.files, text: '' });
   };
 
+
+//Copyclipboard
+
+
+
+window.addEventListener("paste",e =>{
+
+  if(e.clipboardData.files.length >0){
+    const fileInput = document.querySelector("#D");
+    fileInput.files = e.clipboardData.files;
+    console.log(fileInput.files);
+  }
+  
+  
+  });  
+
+
+//End
+
+
+
   return (
    
    <form className="message-form" onSubmit={handleSubmit}>
-                        <isTyping/>
+                      
 
       <input
         className="message-input"
@@ -54,8 +76,9 @@ const MessageForm = (props) => {
         style={{ display: 'none' }}
         onChange={handleUpload.bind(this)}
       />
+ 
 
-      <button type="submit" className="send-button">
+      <button type="submit"  className="send-button">
         
         <SendOutlined className="send-icon" />
       </button>

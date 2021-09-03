@@ -19,7 +19,7 @@ const App = () => {
       userName={localStorage.getItem('username')}
       userSecret={localStorage.getItem('password')}
       renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
-      onNewMessage={() => new Audio('https://chat-engine-assets.s3.amazonaws.com/click.mp3').play()}
+      onNewMessage={() => new Audio('https://www.soundsnap.com/streamers/play2.php?t=l&p=files%2Faudio%2F13%2FButton+alert+tone+-+selecta.wav').play()}
     />
     
   );
