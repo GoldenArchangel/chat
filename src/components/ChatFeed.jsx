@@ -64,7 +64,10 @@ const ChatFeed = (props) => {
         <div className="chat-title">{chat?.title}             <Click/>
 </div>
        
-
+<br/>
+<br/>
+<br/>
+<br/>
 
       </div>
       {renderMessages()}
